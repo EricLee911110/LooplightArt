@@ -35,7 +35,7 @@ export default function Curve({children}) {
         if(index == words.length - 1) return;
         setTimeout( () => {
             setIndex(index + 1)
-        }, index == 0 ? 1000 : 150)
+        }, index == 0 ? 300 : 150)
     }, [index])
 
     useEffect(() => {
@@ -62,8 +62,8 @@ export default function Curve({children}) {
             opacity: 0,
             top: -100,
             transition:{
-                duration: .75,
-                delay: 2.3,
+                duration: 2.75,
+                delay: 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
@@ -116,8 +116,8 @@ const SVG = ({width, height}) => {
         enter: {
             d: targetPath,
             transition:{
-                duration: .75,
-                delay: 2.3,
+                duration: 2.75,
+                delay: 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
         },
@@ -137,8 +137,8 @@ const SVG = ({width, height}) => {
         enter: {
             top: "-100vh",
             transition:{
-                duration: .75,
-                delay: 2.3,
+                duration: 2.75,
+                delay: 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
