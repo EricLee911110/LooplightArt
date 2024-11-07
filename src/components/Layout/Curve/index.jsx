@@ -31,19 +31,12 @@ export default function Curve({children}) {
 
     const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            // If we reached the end of the list, reset to 0 after 1 second
-            if (index === words.length - 1) {
-                setIndex(0);
-            } else {
-                setIndex(prevIndex => prevIndex + 1);
-            }
-        }, index === 0 ? 1000 : 150);
-    
-        // Cleanup timeout if the component unmounts
-        return () => clearTimeout(timeout);
-    }, [index]);
+    useEffect( () => {
+        if(index == words.length - 1) return;
+        setTimeout( () => {
+            setIndex(index + 1)
+        }, index == 0 ? 1000 : 150)
+    }, [index])
 
     useEffect(() => {
         const resize = () => {
@@ -99,8 +92,6 @@ export default function Curve({children}) {
 }
 
 const SVG = ({width, height}) => {
-
-    const router = useRouter();
 
     const initialPath=`
         M0 300
