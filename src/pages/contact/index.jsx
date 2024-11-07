@@ -68,13 +68,11 @@ export default function Index(){
                     </div>
                     <div className="contactInfos">
                         <div className="contactImageContainer">
-                            { router.route === "/contact" &&
-                                <Image 
-                                fill={true}
-                                alt={"image"}
-                                src={`/images/me.jpg`}
-                                />
-                            }
+                            <Image 
+                            fill={true}
+                            alt={"image"}
+                            src={`/images/me.jpg`}
+                            />
                         </div>
                         <div className="contactSection">
                             <p className="infoMeta">CONTACT DETAILS</p>

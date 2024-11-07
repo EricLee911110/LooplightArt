@@ -31,12 +31,21 @@ export default function Curve({children}) {
 
     const [index, setIndex] = useState(0);
 
-    useEffect( () => {
-        if(index == words.length - 1) return;
-        setTimeout( () => {
-            setIndex(index + 1)
-        }, index == 0 ? 300 : 150)
-    }, [index])
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            // If we reached the end of the list, reset to 0 after 1 second
+            if (index >= words.length - 1) {
+                setTimeout(() => {
+                    setIndex(0);
+                }, 500)
+            } else {
+                setIndex(prevIndex => prevIndex + 1);
+            }
+        }, index === 0 ? 1000 : 150);
+    
+        // Cleanup timeout if the component unmounts
+        return () => clearTimeout(timeout);
+    }, [index]);
 
     useEffect(() => {
         const resize = () => {
@@ -62,8 +71,8 @@ export default function Curve({children}) {
             opacity: 0,
             top: -100,
             transition:{
-                duration: 2.75,
-                delay: 0.3,
+                duration: 0.75,
+                delay: router.route === "/" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
@@ -93,6 +102,8 @@ export default function Curve({children}) {
 
 const SVG = ({width, height}) => {
 
+    const router = useRouter();
+
     const initialPath=`
         M0 300
         Q${width / 2} 0 ${width} 300
@@ -116,8 +127,8 @@ const SVG = ({width, height}) => {
         enter: {
             d: targetPath,
             transition:{
-                duration: 2.75,
-                delay: 0.3,
+                duration: 0.75,
+                delay: router.route === "/" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
         },
@@ -137,8 +148,8 @@ const SVG = ({width, height}) => {
         enter: {
             top: "-100vh",
             transition:{
-                duration: 2.75,
-                delay: 0.3,
+                duration: .75,
+                delay: router.route === "/" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {

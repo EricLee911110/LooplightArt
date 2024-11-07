@@ -60,9 +60,7 @@ export default function About(){
                     </div>
                 </div>
             </div>
-            {router.route === "/about" &&
-                <Contact />
-            }
+            <Contact />
         </Curve>
     )
 }
