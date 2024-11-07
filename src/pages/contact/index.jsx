@@ -5,9 +5,13 @@ import Contact from '../../components/Contact';
 import Magnetic from "../../common/Magnetic";
 import Footer from "../../components/Footer";
 import Image from "next/image"
+import { useRouter } from "next/router";
 
 export default function Index(){
     const backgroundColor = "#141516"
+
+    const router = useRouter();
+
     return(
         <div style={{backgroundColor}}>
             <Curve>
@@ -65,11 +69,13 @@ export default function Index(){
                     </div>
                     <div className={styles.contactInfos}>
                         <div className={styles.imageContainer}>
-                            <Image 
-                            fill={true}
-                            alt={"image"}
-                            src={`/images/me.jpg`}
-                            />
+                            { router.route === "/contact" &&
+                                <Image 
+                                fill={true}
+                                alt={"image"}
+                                src={`/images/me.jpg`}
+                                />
+                            }
                         </div>
                         <div className={styles.contactSection}>
                             <p className={styles.infoMeta}>CONTACT DETAILS</p>
