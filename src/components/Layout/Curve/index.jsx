@@ -31,17 +31,19 @@ export default function Curve({children}) {
 
     const [index, setIndex] = useState(0);
 
-    useEffect( () => {
-        if(index == words.length - 1){
-            setTimeout(() => {
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            // If we reached the end of the list, reset to 0 after 1 second
+            if (index === words.length - 1) {
                 setIndex(0);
-            }, 1000)
-            return;
-        }
-        setTimeout( () => {
-            setIndex(index + 1)
-        }, index == 0 ? 1000 : 150)
-    }, [index])
+            } else {
+                setIndex(prevIndex => prevIndex + 1);
+            }
+        }, index === 0 ? 1000 : 150);
+    
+        // Cleanup timeout if the component unmounts
+        return () => clearTimeout(timeout);
+    }, [index]);
 
     useEffect(() => {
         const resize = () => {
@@ -68,7 +70,7 @@ export default function Curve({children}) {
             top: -100,
             transition:{
                 duration: .75,
-                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
+                delay: 2.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
@@ -124,7 +126,7 @@ const SVG = ({width, height}) => {
             d: targetPath,
             transition:{
                 duration: .75,
-                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
+                delay: 2.3,
                 ease: [0.76, 0, 0.24, 1]
             },
         },
@@ -145,7 +147,7 @@ const SVG = ({width, height}) => {
             top: "-100vh",
             transition:{
                 duration: .75,
-                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
+                delay: 2.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
