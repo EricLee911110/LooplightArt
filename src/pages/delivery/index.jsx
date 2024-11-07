@@ -1,13 +1,12 @@
 import Curve from "../../components/Layout/Curve";
 import WhiteHeader from "../../components/WhiteHeader";
-import styles from "./style.module.scss";
 import Footer from "../../components/Footer";
 
 export default function Delivery(){
     return(
         <Curve>
             <WhiteHeader/>
-            <div className={styles.deliveryMain}>
+            <div className="deliveryMain">
                 <h1>DELIVERY</h1>
                 <p>- Commissions might take 1 week to 3 months depending on commission type, complexity, and workload of commissions</p>
 
@@ -22,7 +21,7 @@ export default function Delivery(){
                 <p>- I will not give discounts for multiple orders, pls do not try to haggle with me.</p>
 
                 <h1>GENERAL</h1>
-                <div className={styles.section}>
+                <div className="deliverySection">
                     <p>- My Art can&apos;t be used for AI training.</p>
                     <p>- Client Ghosting Policy: To prevent client ghosting, Clients that promised me to send a commission form but have not responded in 1 week, or have not paid in 1 week, will not be entertained in the future anymore. (Asking for more info is allowed by the way!) It is not my responsibility to remind you about your commission.</p>
                     <p>- When sending me references/ pictures, do not send me links from unknown sites. Google drive and Pinterest are ok though!</p>
