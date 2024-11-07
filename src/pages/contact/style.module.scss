@@ -1,0 +1,130 @@
+.contactTitle{
+    color: white;
+    font-size: 4vw;
+    margin-top: 300px;
+    width: 100vw;
+    padding-left: 15%;
+    padding-right: 10%;
+}
+
+.imageContainer{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img{
+        object-fit: cover;
+    }
+}
+
+.sendButton{
+    user-select: none;
+    margin-top: 30px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #3498db;
+    font-weight: bold;
+    transition: 0.3s ease;
+    display: flex; /* Enables flexbox for centering */
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    text-align: center; /* Centers text alignment */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+}
+.sendButton:hover {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 0 10px #3498db;
+}
+
+
+.contactMain{
+    margin-top: 100px;
+    color: white;
+    position: relative;
+    width: 100vw;
+    padding-left: 15%;
+    padding-right: 10%;
+    display: flex;
+    .contactQuestions{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 45%;
+        .questionForm{
+            display: flex;
+            flex-direction: column;
+        }
+        .question{
+            display: flex;
+            gap: 50px;
+            font-size: 30px;
+            .number{
+                color: rgb(105, 105, 105);
+            }
+        }
+        .userInput{
+            margin-left: 80px;
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 20px;
+        }
+    }
+    .contactInfos{
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-left: 10vw;
+        width: 20vw;
+        transform: translateX(0); /* Keeps it anchored to the left */
+        transform: translateX(0%);
+        .contactSection{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            .infoMeta{
+                color:rgb(105, 105, 105);
+            }
+        }
+        .infoData{
+            width: fit-content;
+            cursor: pointer;
+            margin: 5px;
+            &::after{
+                content: "";
+                width: 0%;
+                height: 1px;
+                background-color: white;
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.2s linear;
+            }
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.divider{
+    height: 2px;
+    width: 100%;
+    background-color: rgb(105, 105, 105);
+}
+
+.InvisibleGap{
+    height: 20px;
+}

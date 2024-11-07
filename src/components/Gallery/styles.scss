@@ -1,0 +1,85 @@
+.gallery{
+    height: 100vh;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    .imageContainer{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        filter: brightness(50%);
+        filter: blur(50px);
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .vignette{
+        color: black;
+        height: 30vw;
+        width: 25vw;
+        min-width: 300px;
+        min-height: 400px;
+        position: fixed;
+        top: 20vh;
+        left: 10vw;
+        border-radius: 1.5vw;
+        overflow: hidden;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .artText {
+        display: flex;
+        flex-direction: column;
+        width: 50vw; /* Start with half the viewport width */
+        position: absolute; /* Positioning it absolutely from the center */
+        left: 50%; /* Start from the middle of the viewport */
+        transform: translateX(0); /* Keeps it anchored to the left */
+        z-index: 3;
+        margin-top: 30vh;
+    
+        .artTitle, .artDescription {
+            text-align: left; /* Text will start aligned to the left */
+            padding-right: 20px;
+            margin: 0px;
+        }
+        .artTitle{
+            font-size: 40px;
+        }
+        .artDescription{
+            font-size: 20px;
+            margin-right: 10vw;
+            margin-top: 20px;
+        }
+
+        .artButton {
+            user-select: none;
+            margin-top: 30px;
+            width: 100px;
+            height: 40px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: transparent;
+            color: #3498db;
+            font-weight: bold;
+            transition: 0.3s ease;
+            display: flex; /* Enables flexbox for centering */
+            align-items: center; /* Centers vertically */
+            justify-content: center; /* Centers horizontally */
+            text-align: center; /* Centers text alignment */
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            cursor: pointer;
+        }
+        
+        .artButton:hover {
+            background-color: #3498db;
+            color: white;
+            box-shadow: 0 0 10px #3498db;
+        }
+        
+        
+        
+        
+    }
+}
