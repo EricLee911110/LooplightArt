@@ -11,6 +11,8 @@ const anim = (variants) => {
     }
 }
 
+const words = ["Hello", "lí hó", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Welcome"]
+
 const routes = {
     "/": "Home",
     "/about": "About",
@@ -26,6 +28,20 @@ export default function Curve({children}) {
         height: 0,
         width: 0
     })
+
+    const [index, setIndex] = useState(0);
+
+    useEffect( () => {
+        if(index == words.length - 1){
+            setTimeout(() => {
+                setIndex(0);
+            }, 1000)
+            return;
+        }
+        setTimeout( () => {
+            setIndex(index + 1)
+        }, index == 0 ? 1000 : 150)
+    }, [index])
 
     useEffect(() => {
         const resize = () => {
@@ -52,7 +68,7 @@ export default function Curve({children}) {
             top: -100,
             transition:{
                 duration: .75,
-                delay: 0.3,
+                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
@@ -72,7 +88,7 @@ export default function Curve({children}) {
 
     return(
         <div className="page curve">
-            <motion.p {...anim(text)} className="route">{routes[router.route]}</motion.p>
+            <motion.p {...anim(text)} className="route">{routes[router.route] === "Home" ? words[index] : routes[router.route]}</motion.p>
             <div style={{opacity: dimensions.width > 0 ? 0 : 1}} className="background"></div>
             {dimensions.width > 0 && <SVG {...dimensions}/>}
             {children}
@@ -81,6 +97,8 @@ export default function Curve({children}) {
 }
 
 const SVG = ({width, height}) => {
+
+    const router = useRouter();
 
     const initialPath=`
         M0 300
@@ -106,7 +124,7 @@ const SVG = ({width, height}) => {
             d: targetPath,
             transition:{
                 duration: .75,
-                delay: 0.3,
+                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
         },
@@ -127,7 +145,7 @@ const SVG = ({width, height}) => {
             top: "-100vh",
             transition:{
                 duration: .75,
-                delay: 0.3,
+                delay: routes[router.route] === "Home" ? 2.3 : 0.3,
                 ease: [0.76, 0, 0.24, 1]
             },
             transitionEnd: {
