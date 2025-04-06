@@ -6,7 +6,7 @@ import Magnetic from '../../common/Magnetic'
 export const projects=[
     {
       name: "background",
-      handle: "kinect2.png",
+      handle: "Kinect2.png",
       title: "Unity 互動式遊戲開發",
       description: "利用Xbox Kinect內建深度及光學鏡頭，辨識特定人體動作、手勢以及速度變化，將讀取到的訊號傳送到Unity，用來控制橫向捲軸遊戲內的角色。",
       link: "https://www.youtube.com/watch?v=mqDv7qdY3N0",
