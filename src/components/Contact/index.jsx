@@ -29,8 +29,8 @@ export default function Index() {
                     </span>
                     <h2>together</h2>
                     <motion.div style={{x}} className="buttonContainer">
-                        <Rounded  backgroundColor={"#334BD3"} className="button">
-                            <p>Get in touch</p>
+                        <Rounded  backgroundColor={"#334BD3"} className="button" link="https://drive.google.com/drive/folders/148HWbYf7wYaaVX4_tVUWfC_T7O_StHUo?usp=sharing">
+                            <p>Get Full Resume</p>
                         </Rounded>
                     </motion.div>
                 </div>
@@ -38,9 +38,9 @@ export default function Index() {
                         <Rounded>
                             <p>ericlee911110@gmail.com</p>
                         </Rounded>
-                        <Rounded>
+                        {/* <Rounded>
                             <p>Discord</p>
-                        </Rounded>
+                        </Rounded> */}
                 </div>
                 <div className="info">
                     <div>

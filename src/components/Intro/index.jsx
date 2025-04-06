@@ -30,7 +30,7 @@ export default function Index() {
         <div className="homeHeader">
             <div className="backgroundImage" ref={background}>
                 <Image 
-                    src={'/images/artdesk4.jpg'}
+                    src={'/images/artdesk5.jpg'}
                     fill={true}
                     alt="background image"
                     priority={true}
@@ -39,7 +39,7 @@ export default function Index() {
             <div className="intro">
                     <div ref={introImage} data-scroll data-scroll-speed="0.3" className="introImage">
                         <Image
-                            src={'/images/me.jpg'}
+                            src={'/images/me4.jpeg'}
                             alt="intro image"
                             fill={true} 
                             priority={true}
@@ -47,10 +47,9 @@ export default function Index() {
                     </div>
                     {/* <h1 data-scroll data-scroll-speed="0.7">Let&apos;s make it happen.</h1> */}
                     <div className='introText'>
-                        <h1 data-scroll data-scroll-speed="0.7">Eric Lee</h1>
-                        <h2 data-scroll data-scroll-speed="0.7">Digital Art Commissions</h2>
+                        <h1 data-scroll data-scroll-speed="0.7" style={{ fontFamily: 'JfOpenHuninn, sans-serif' }}>李杰宇</h1>
+                        <h2 data-scroll data-scroll-speed="0.7" style={{ fontFamily: 'JfOpenHuninn, sans-serif' }}>(Scroll Down For More)</h2>
                     </div>
-
              </div>
         </div>
     )

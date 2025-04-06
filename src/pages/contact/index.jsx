@@ -15,7 +15,7 @@ export default function Index(){
         <div style={{backgroundColor}}>
             <Curve>
                 <Header useBlackHeader={true}/>
-                <h1 className="contactTitle">Let&apos;s start a sketch together</h1>
+                <h1 className="contactTitle">Let&apos;s Create Something Together</h1>
                 <div className="contactMain">
                     <div className="contactQuestions">
                         <div className="questionForm">
@@ -45,14 +45,14 @@ export default function Index(){
                             <input className="userInput" placeholder="John & Doe"></input>
                         </div>
 
-                        <div className="questionForm">
+                        {/* <div className="questionForm">
                             <div className="contactDivider"/>
                             <div className="question">
                                 <p className="number">04</p>
                                 <p>What services are you looking for?</p>
                             </div>
                             <input className="userInput" placeholder="Background Illustration, Logo Design, Concept Art ..."></input>
-                        </div>
+                        </div> */}
 
                         <div className="questionForm">
                             <div className="contactDivider"/>
@@ -62,9 +62,9 @@ export default function Index(){
                             </div>
                             <input className="userInput" placeholder="Hello Eric, can you help me with ..."></input>
                         </div>
-                        <Magnetic>
+                        {/* <Magnetic>
                             <div className="sendButton">Send it!</div>
-                        </Magnetic>
+                        </Magnetic> */}
                     </div>
                     <div className="contactInfos">
                         <div className="contactImageContainer">
@@ -86,7 +86,7 @@ export default function Index(){
                                 <p className="infoData">No. 43, Section 4, Keelung Rd, Da&apos;an District, Taipei City, Taiwan</p>
                             </Magnetic>
                         </div>
-                        <div className="contactSection">
+                        {/* <div className="contactSection">
                             <p className="infoMeta">SOCIALS</p>
                             <Magnetic>
                                 <p className="infoData">Instagram</p>
@@ -97,7 +97,7 @@ export default function Index(){
                             <Magnetic>
                                 <p className="infoData">LinkedIn</p>
                             </Magnetic>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <Footer/>

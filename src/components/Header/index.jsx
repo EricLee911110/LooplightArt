@@ -20,18 +20,18 @@ export default function Index({ useBlackHeader = false }){
                 </div>
             </div>
             <div className="nav">
-                <Magnetic>
+                {/* <Magnetic>
                     <div className="el">
                         <Link href='/delivery'>Delivery</Link>
                         <div className="indicator"></div>
                     </div>
-                </Magnetic>
-                <Magnetic>
+                </Magnetic> */}
+                {/* <Magnetic>
                     <div className="el">
                         <Link href='/about'>About</Link>
                         <div className="indicator"></div>
                     </div>
-                </Magnetic>
+                </Magnetic> */}
                 <Magnetic>
                     <div className="el">
                         <Link href='/contact'>Contact</Link>

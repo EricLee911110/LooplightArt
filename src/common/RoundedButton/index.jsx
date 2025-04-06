@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 
-export default function Index({children, backgroundColor="#455CE9", ...attributes}) {
+export default function Index({children, backgroundColor="#455CE9", link="", ...attributes}) {
 
   const router = useRouter();
 
@@ -30,10 +30,16 @@ export default function Index({children, backgroundColor="#455CE9", ...attribute
       timeline.current.play();
     }, 300)
   }
+  
+  const handleClick = (link) => {
+    if (typeof window !== 'undefined' && link){
+        window.open(link, "_blank");
+    }
+}
 
   return (
     <Magnetic>
-      <div className="roundedButton" style={{overflow: "hidden"}} onMouseEnter={() => {manageMouseEnter()}} onMouseLeave={() => {manageMouseLeave()}} {...attributes} onClick={() => {router.push("/about")}}>
+      <div className="roundedButton" style={{overflow: "hidden"}} onMouseEnter={() => {manageMouseEnter()}} onMouseLeave={() => {manageMouseLeave()}} onClick={() => {handleClick(link)}} {...attributes} >
           {
             children
           }

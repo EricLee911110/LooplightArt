@@ -50,8 +50,8 @@ export default function Home() {
           <Description/>
           <div className='gap'></div>
           {
-            projects.map( ({handle, title, description}, index) => {
-              return <Gallery handle={handle} title={title} description={description} key={index}></Gallery>
+            projects.map( ({handle, title, description, link}, index) => {
+              return <Gallery handle={handle} title={title} description={description} link={link} key={index}></Gallery>
             })
           }
           <div className='para'></div>
